@@ -175,22 +175,14 @@
     }
 
     .brand-copy {
-      display: flex;
-      flex-direction: column;
       min-width: 0;
     }
 
     .brand-name {
-      font-size: 1rem;
+      font-size: clamp(1.18rem, 2vw, 1.45rem);
       font-weight: 800;
       letter-spacing: -0.03em;
-    }
-
-    .brand-tag {
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--muted-strong);
+      line-height: 1;
     }
 
     .site-nav {
@@ -236,9 +228,9 @@
 
     .hero {
       position: relative;
-      min-height: min(66vh, 640px);
+      min-height: min(58vh, 560px);
       display: grid;
-      align-items: end;
+      align-items: center;
       padding: clamp(28px, 6vw, 52px);
       border-radius: calc(var(--radius-xl) + 8px);
       overflow: hidden;
@@ -255,14 +247,10 @@
     .hero::after {
       content: "";
       position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .hero::after {
       inset: 18px;
       border: 1px solid rgba(255, 255, 255, 0.05);
       border-radius: calc(var(--radius-xl) + 2px);
+      pointer-events: none;
       z-index: -1;
     }
 
@@ -272,7 +260,7 @@
       display: grid;
       max-width: 780px;
       gap: 18px;
-      align-items: end;
+      align-items: center;
     }
 
     .hero-copy {
@@ -414,12 +402,6 @@
       font-size: clamp(2rem, 4vw, 3.7rem);
       line-height: 0.96;
       letter-spacing: -0.04em;
-    }
-
-    .upcoming-copy p {
-      margin: 0;
-      max-width: 36rem;
-      color: var(--muted);
     }
 
     .project-status {
@@ -600,12 +582,11 @@
         </div>
         <div class="brand-copy">
           <span class="brand-name">Quiet Den Games</span>
-          <span class="brand-tag">Small narrative games</span>
         </div>
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#games">Games</a>
+        <a href="#games">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -645,12 +626,11 @@
 
       <section class="upcoming-panel reveal delay-3" aria-labelledby="upcoming-title">
         <div class="upcoming-copy">
-          <p class="panel-label">Now developing</p>
+          <p class="panel-label">Upcoming</p>
           <h2 id="upcoming-title">Unannounced Project</h2>
-          <p>A new Quiet Den Games project is currently in development.</p>
         </div>
 
-        <span class="project-status">Details to come</span>
+        <span class="project-status">In development</span>
       </section>
 
     </main>
