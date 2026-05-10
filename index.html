@@ -346,7 +346,6 @@
       background: rgba(255, 208, 173, 0.08);
     }
 
-    .upcoming-panel,
     .footer-panel {
       position: relative;
       overflow: hidden;
@@ -359,7 +358,6 @@
       box-shadow: var(--shadow);
     }
 
-    .upcoming-panel::before,
     .footer-panel::before {
       content: "";
       position: absolute;
@@ -376,41 +374,6 @@
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent-strong);
-    }
-
-    .upcoming-panel {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 22px;
-      padding: clamp(22px, 4vw, 34px);
-      background:
-        linear-gradient(135deg, rgba(178, 214, 205, 0.08), transparent 52%),
-        linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01)),
-        rgba(12, 11, 11, 0.9);
-    }
-
-    .upcoming-copy {
-      display: grid;
-      gap: 10px;
-    }
-
-    .upcoming-copy h2 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3.7rem);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
-    }
-
-    .project-status {
-      flex-shrink: 0;
-      color: var(--muted-strong);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
     }
 
     .footer-panel {
@@ -528,7 +491,6 @@
       }
 
       .hero,
-      .upcoming-panel,
       .footer-panel {
         border-radius: 24px;
       }
@@ -541,11 +503,6 @@
       .hero-title {
         max-width: none;
         font-size: clamp(2.9rem, 13vw, 4.8rem);
-      }
-
-      .upcoming-panel {
-        flex-direction: column;
-        align-items: flex-start;
       }
 
       .footer-panel {
@@ -622,15 +579,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="upcoming-panel reveal delay-3" aria-labelledby="upcoming-title">
-        <div class="upcoming-copy">
-          <p class="panel-label">Upcoming</p>
-          <h2 id="upcoming-title">Unannounced Project</h2>
-        </div>
-
-        <span class="project-status">In development</span>
       </section>
 
     </main>
