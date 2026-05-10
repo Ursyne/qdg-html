@@ -6,14 +6,14 @@
   <title>Quiet Den Games</title>
   <meta
     name="description"
-    content="Quiet Den Games makes short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
+    content="Quiet Den Games makes small narrative games. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta name="theme-color" content="#090909">
 
   <meta property="og:title" content="Quiet Den Games">
   <meta
     property="og:description"
-    content="Short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
+    content="Small narrative games. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quietdengames.com">
@@ -23,7 +23,7 @@
   <meta name="twitter:title" content="Quiet Den Games">
   <meta
     name="twitter:description"
-    content="Short, atmospheric interactive projects. Currently featuring The Interval Bureau: Extension 0."
+    content="Small narrative games. Currently featuring The Interval Bureau: Extension 0."
   >
   <meta name="twitter:image" content="https://quietdengames.com/og-image.png">
 
@@ -234,11 +234,36 @@
       transform: scaleX(1);
     }
 
+    .studio-intro {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+      padding: 4px 4px 0;
+    }
+
+    .studio-intro h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4.7rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+    }
+
+    .studio-intro p {
+      margin: 0;
+      max-width: 20rem;
+      color: var(--muted);
+      font-size: 1rem;
+      text-align: right;
+    }
+
     .hero {
       position: relative;
-      min-height: min(61vh, 620px);
+      min-height: min(66vh, 640px);
       display: grid;
-      align-items: start;
+      align-items: end;
       padding: clamp(28px, 6vw, 52px);
       border-radius: calc(var(--radius-xl) + 8px);
       overflow: hidden;
@@ -279,13 +304,13 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(290px, 0.7fr);
-      gap: 24px;
-      align-items: start;
+      max-width: 780px;
+      gap: 18px;
+      align-items: end;
     }
 
     .hero-copy {
-      max-width: 720px;
+      max-width: 780px;
       align-self: start;
       justify-self: start;
       text-align: left;
@@ -313,12 +338,17 @@
       color: var(--muted);
     }
 
+    .hero-copy .panel-label {
+      display: block;
+      margin-bottom: 14px;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 6px;
-      justify-content: center;
+      margin-top: 26px;
+      justify-content: flex-start;
     }
 
     .btn {
@@ -367,7 +397,6 @@
       background: rgba(255, 208, 173, 0.08);
     }
 
-    .hero-panel,
     .footer-panel {
       position: relative;
       overflow: hidden;
@@ -380,7 +409,6 @@
       box-shadow: var(--shadow);
     }
 
-    .hero-panel::before,
     .footer-panel::before {
       content: "";
       position: absolute;
@@ -390,42 +418,13 @@
       pointer-events: none;
     }
 
-    .hero-panel {
-      padding: 22px;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
-        linear-gradient(160deg, rgba(240, 143, 109, 0.12), transparent 60%),
-        rgba(10, 9, 9, 0.78);
-      align-self: stretch;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      gap: 18px;
-    }
-
-    .panel-label,
-    .section-label {
+    .panel-label {
       margin: 0;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent-strong);
-    }
-
-    .hero-panel h2 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3.3rem);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
-      text-wrap: balance;
-    }
-
-    .hero-panel p {
-      margin: 0;
-      color: var(--muted);
     }
 
     .footer-panel {
@@ -517,10 +516,6 @@
         border-radius: 28px;
       }
 
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
       .hero {
         min-height: auto;
       }
@@ -544,6 +539,15 @@
 
       .site-nav {
         gap: 14px;
+      }
+
+      .studio-intro {
+        display: grid;
+        gap: 8px;
+      }
+
+      .studio-intro p {
+        text-align: left;
       }
 
       .hero,
@@ -595,7 +599,7 @@
         </div>
         <div class="brand-copy">
           <span class="brand-name">Quiet Den Games</span>
-          <span class="brand-tag">Atmospheric interactive fiction</span>
+          <span class="brand-tag">Small narrative games</span>
         </div>
       </a>
 
@@ -606,20 +610,16 @@
     </header>
 
     <main id="top">
-      <section class="hero reveal delay-2" aria-labelledby="hero-title">
+      <section class="studio-intro reveal delay-2" aria-labelledby="studio-title">
+        <h1 id="studio-title">Quiet Den Games</h1>
+        <p>Small narrative games.</p>
+      </section>
+
+      <section class="hero reveal delay-3" id="games" aria-labelledby="featured-title">
         <div class="hero-grid">
           <div class="hero-copy">
-            <h1 class="hero-title" id="hero-title">Small games with a long <em>afterimage</em>.</h1>
-            <p>
-              Quiet Den Games makes compact narrative experiences that feel intimate,
-              uncanny, and a little dangerous to sit with. The goal is not just to
-              entertain for an evening, but to leave a strange emotional residue behind.
-            </p>
-          </div>
-
-          <aside class="hero-panel reveal delay-3" id="games" aria-labelledby="featured-title">
-            <p class="panel-label">Featured release</p>
-            <h2 id="featured-title">The Interval Bureau: Extension 0</h2>
+            <span class="panel-label">Featured game</span>
+            <h2 class="hero-title" id="featured-title">The Interval Bureau: <em>Extension 0</em></h2>
             <p>
               A short psychological audio horror call where every number routes you
               deeper into a faceless bureau that measures and files you.
@@ -643,7 +643,7 @@
                 Play on itch.io
               </a>
             </div>
-          </aside>
+          </div>
         </div>
       </section>
 
