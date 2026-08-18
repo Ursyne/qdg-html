@@ -116,7 +116,7 @@
       z-index: 20;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 28px;
       padding-block: 22px;
       border-bottom: 1px solid var(--line);
@@ -154,44 +154,6 @@
       text-transform: uppercase;
     }
 
-    .site-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 3vw, 34px);
-    }
-
-    .site-nav a {
-      position: relative;
-      color: var(--paper-soft);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: color var(--ease);
-    }
-
-    .site-nav a::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: -7px;
-      left: 0;
-      height: 1px;
-      background: var(--ember-light);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform var(--ease);
-    }
-
-    .site-nav a:hover {
-      color: var(--paper);
-    }
-
-    .site-nav a:hover::after {
-      transform: scaleX(1);
-    }
-
     main {
       display: block;
     }
@@ -205,20 +167,6 @@
     .section-first {
       padding-top: clamp(52px, 7vw, 88px);
       border-top: 0;
-    }
-
-    .section-title {
-      margin-bottom: clamp(28px, 4vw, 44px);
-    }
-
-    .section-title h1,
-    .section-title h2 {
-      margin: 0;
-      font-family: var(--display);
-      font-size: clamp(2.2rem, 3.8vw, 3.4rem);
-      font-weight: 600;
-      letter-spacing: -0.045em;
-      line-height: 1;
     }
 
     .actions {
@@ -357,12 +305,6 @@
       padding-top: 24px;
     }
 
-    .project-card--unannounced .project-body {
-      min-height: 100%;
-      justify-content: flex-end;
-      background: #12100f;
-    }
-
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -407,6 +349,7 @@
     }
 
     .footer-links a,
+    .footer-contact,
     .copyright {
       color: var(--paper-dim);
       font-size: 0.68rem;
@@ -463,10 +406,6 @@
         border-radius: 20px;
       }
 
-      .project-card--unannounced .project-body {
-        min-height: 280px;
-      }
-
       .footer-row {
         align-items: flex-start;
         flex-direction: column;
@@ -498,19 +437,19 @@
       <span class="brand-name">Quiet Den Games</span>
     </a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#featured">Featured</a>
-      <a href="#games">Games</a>
-    </nav>
   </header>
 
   <main id="top" class="shell">
-    <section class="section section-first" id="featured" aria-labelledby="featured-title">
-      <div class="section-title">
-        <h1 id="featured-title">Featured</h1>
-      </div>
-
+    <section class="section section-first" aria-label="Games">
       <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image-wrap" aria-hidden="true"></div>
+          <div class="project-body">
+            <h3>Unannounced Project</h3>
+            <p>Coming soon.</p>
+          </div>
+        </article>
+
         <article class="project-card">
           <div class="project-image-wrap">
             <img
@@ -550,21 +489,6 @@
           </div>
         </article>
 
-        <article class="project-card project-card--unannounced">
-          <div class="project-body">
-            <h3>Unannounced Project</h3>
-            <p>Coming soon.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section" id="games" aria-labelledby="games-title">
-      <div class="section-title">
-        <h2 id="games-title">More games</h2>
-      </div>
-
-      <div class="project-grid">
         <article class="project-card">
           <div class="project-image-wrap">
             <img
@@ -629,10 +553,10 @@
   <footer class="site-footer">
     <div class="footer-row shell">
       <div class="footer-links">
-        <a href="mailto:contact@quietdengames.com">Contact</a>
+        <span class="footer-contact">contact[at]quietdengames.com</span>
         <a href="https://quietdengames.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
         <a
-          href="https://store.steampowered.com/app/4192270/The_Interval_Bureau_Extension_0/"
+          href="https://store.steampowered.com/search/?developer=Quiet%20Den%20Games"
           target="_blank"
           rel="noopener noreferrer"
         >Steam</a>
