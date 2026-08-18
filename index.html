@@ -3,32 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiet Den Games</title>
-  <meta
-    name="description"
-    content="Quiet Den Games makes small narrative games. Currently featuring The Interval Bureau: Extension 0."
-  >
-  <meta name="theme-color" content="#090909">
+  <title>Quiet Den Games | Games</title>
+  <meta name="description" content="Games by Quiet Den Games.">
+  <meta name="theme-color" content="#0b0a09">
 
   <meta property="og:title" content="Quiet Den Games">
-  <meta
-    property="og:description"
-    content="Small narrative games. Currently featuring The Interval Bureau: Extension 0."
-  >
+  <meta property="og:description" content="Games by Quiet Den Games.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://quietdengames.com">
-  <meta property="og:image" content="https://quietdengames.com/og-image.png">
+  <meta property="og:image" content="https://quietdengames.com/assets/Extension0/hero.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Quiet Den Games">
-  <meta
-    name="twitter:description"
-    content="Small narrative games. Currently featuring The Interval Bureau: Extension 0."
-  >
-  <meta name="twitter:image" content="https://quietdengames.com/og-image.png">
+  <meta name="twitter:description" content="Games by Quiet Den Games.">
+  <meta name="twitter:image" content="https://quietdengames.com/assets/Extension0/hero.jpg">
 
-  <link rel="icon" href="/favicon.ico">
-
+  <link rel="icon" type="image/png" href="/assets/brand-mark.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -39,27 +29,25 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #090909;
-      --bg-soft: #111010;
-      --panel: rgba(14, 13, 13, 0.82);
-      --panel-strong: rgba(18, 16, 16, 0.94);
-      --line: rgba(255, 241, 225, 0.1);
-      --line-strong: rgba(255, 241, 225, 0.18);
-      --text: #f6efe4;
-      --muted: #d2c1af;
-      --muted-strong: #b89f89;
-      --accent: #f08f6d;
-      --accent-strong: #ffd0ad;
-      --accent-cool: #b2d6cd;
-      --shadow: 0 32px 80px rgba(0, 0, 0, 0.38);
-      --radius-xl: 32px;
-      --radius-lg: 24px;
-      --radius-md: 18px;
-      --max-width: 1200px;
-      --font-display: "Instrument Serif", Georgia, serif;
-      --font-ui: "Manrope", "Segoe UI", sans-serif;
-      --transition-fast: 180ms ease;
-      --transition-slow: 260ms cubic-bezier(0.22, 1, 0.36, 1);
+      --ink: #0b0a09;
+      --ink-soft: #11100f;
+      --paper: #f0e9dc;
+      --paper-soft: #c8bfb1;
+      --paper-dim: #9b9287;
+      --ember: #ed7658;
+      --ember-light: #ffaf85;
+      --amber: #e2b762;
+      --moss: #899b8a;
+      --line: rgba(240, 233, 220, 0.13);
+      --line-strong: rgba(240, 233, 220, 0.24);
+      --panel: rgba(19, 17, 15, 0.78);
+      --display: "Instrument Serif", Georgia, serif;
+      --sans: "Manrope", "Segoe UI", sans-serif;
+      --max-width: 1240px;
+      --radius-lg: 32px;
+      --radius-md: 22px;
+      --radius-sm: 14px;
+      --ease: 240ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     * {
@@ -72,44 +60,31 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: var(--font-ui);
-      color: var(--text);
+      min-width: 320px;
+      color: var(--paper);
       background:
-        radial-gradient(circle at 20% 10%, rgba(240, 143, 109, 0.11), transparent 24%),
-        radial-gradient(circle at 78% 22%, rgba(178, 214, 205, 0.08), transparent 28%),
-        linear-gradient(180deg, #0d0908 0%, #090909 50%, #070707 100%);
-      background-color: var(--bg);
-      line-height: 1.6;
+        radial-gradient(circle at 85% 4%, rgba(226, 183, 98, 0.08), transparent 25rem),
+        radial-gradient(circle at 10% 40%, rgba(237, 118, 88, 0.07), transparent 30rem),
+        var(--ink);
+      font-family: var(--sans);
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
 
-    body::before,
-    body::after {
+    body::before {
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
-      z-index: 0;
-    }
-
-    body::before {
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
       background-size: 72px 72px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.55), transparent 92%);
-      opacity: 0.18;
-    }
-
-    body::after {
-      background:
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0, transparent 48%),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.13'/%3E%3C/svg%3E");
-      opacity: 0.16;
-      mix-blend-mode: soft-light;
+      mask-image: linear-gradient(to bottom, black, transparent 90%);
     }
 
     a {
@@ -121,393 +96,480 @@
       max-width: 100%;
     }
 
-    .page-shell {
-      position: relative;
-      z-index: 1;
-      padding: 20px clamp(14px, 3vw, 30px) 40px;
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .site-header,
-    main,
-    .site-footer {
-      position: relative;
-      width: 100%;
-      max-width: var(--max-width);
-      margin: 0 auto;
+    a:focus-visible {
+      outline: 2px solid var(--ember-light);
+      outline-offset: 5px;
+    }
+
+    .shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin-inline: auto;
     }
 
     .site-header {
+      position: relative;
+      z-index: 20;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      padding: 14px 18px;
-      border: 1px solid rgba(255, 241, 225, 0.12);
-      border-radius: 999px;
-      background: rgba(8, 8, 8, 0.52);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.28);
-      margin-bottom: 22px;
+      gap: 28px;
+      padding-block: 22px;
+      border-bottom: 1px solid var(--line);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 14px;
-      min-width: 0;
+      gap: 12px;
       text-decoration: none;
     }
 
     .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
+      display: grid;
+      width: 46px;
+      height: 46px;
+      place-items: center;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--line);
+      border-radius: 50%;
       background: rgba(255, 255, 255, 0.03);
-      flex-shrink: 0;
     }
 
     .brand-mark img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .brand-copy {
-      min-width: 0;
+      width: 37px;
+      height: 37px;
+      object-fit: contain;
     }
 
     .brand-name {
-      font-size: clamp(1.18rem, 2vw, 1.45rem);
+      font-size: 0.9rem;
       font-weight: 800;
-      letter-spacing: -0.03em;
+      letter-spacing: 0.11em;
       line-height: 1;
+      text-transform: uppercase;
     }
 
     .site-nav {
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 18px;
+      gap: clamp(18px, 3vw, 34px);
     }
 
     .site-nav a {
       position: relative;
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      color: var(--paper-soft);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
       text-decoration: none;
-      color: var(--muted);
-      transition: color var(--transition-fast);
+      text-transform: uppercase;
+      transition: color var(--ease);
     }
 
     .site-nav a::after {
       content: "";
       position: absolute;
+      right: 0;
+      bottom: -7px;
       left: 0;
-      bottom: -6px;
-      width: 100%;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      opacity: 0;
-      transform: scaleX(0.5);
-      transition:
-        opacity var(--transition-fast),
-        transform var(--transition-fast);
+      background: var(--ember-light);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--ease);
     }
 
     .site-nav a:hover {
-      color: var(--text);
+      color: var(--paper);
     }
 
     .site-nav a:hover::after {
-      opacity: 1;
       transform: scaleX(1);
     }
 
-    .hero {
-      position: relative;
-      min-height: min(58vh, 560px);
+    main {
+      display: block;
+    }
+
+    .section {
+      padding-block: clamp(74px, 10vw, 130px);
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 28px;
+    }
+
+    .section-first {
+      padding-top: clamp(52px, 7vw, 88px);
+      border-top: 0;
+    }
+
+    .section-title {
+      margin-bottom: clamp(28px, 4vw, 44px);
+    }
+
+    .section-title h1,
+    .section-title h2 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.7rem, 5vw, 4.7rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+
+    .featured-list {
       display: grid;
-      align-items: center;
-      padding: clamp(28px, 6vw, 52px);
-      border-radius: calc(var(--radius-xl) + 8px);
+      gap: 26px;
+    }
+
+    .featured-card {
+      position: relative;
+      display: grid;
+      min-height: 640px;
       overflow: hidden;
-      margin-bottom: 22px;
-      border: 1px solid rgba(255, 241, 225, 0.12);
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(8, 8, 8, 0.08), rgba(8, 8, 8, 0.66) 58%, rgba(8, 8, 8, 0.92) 100%),
-        linear-gradient(120deg, rgba(10, 8, 8, 0.88) 8%, rgba(10, 8, 8, 0.46) 42%, rgba(10, 8, 8, 0.82) 100%),
-        url("assets/Extension0/image_01.png") center 64% / cover no-repeat;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--ink-soft);
       isolation: isolate;
     }
 
-    .hero::after {
-      content: "";
+    .featured-media {
       position: absolute;
-      inset: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: calc(var(--radius-xl) + 2px);
-      pointer-events: none;
-      z-index: -1;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .hero-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      max-width: 780px;
-      gap: 18px;
-      align-items: center;
+    .featured-card:hover .featured-media {
+      transform: scale(1.025);
     }
 
-    .hero-copy {
-      max-width: 780px;
-      align-self: start;
-      justify-self: start;
-      text-align: left;
-    }
-
-    .hero-title {
-      margin: 0;
-      max-width: 12ch;
-      font-family: var(--font-display);
-      font-size: clamp(3.35rem, 7vw, 6.75rem);
-      line-height: 0.9;
-      letter-spacing: -0.05em;
-      text-wrap: balance;
-    }
-
-    .hero-copy p {
-      margin: 18px 0 0;
-      max-width: 38rem;
-      font-size: 1.06rem;
-      color: var(--muted);
-    }
-
-    .hero-copy .panel-label {
-      display: block;
-      margin-bottom: 14px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 26px;
-      justify-content: flex-start;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition:
-        transform var(--transition-fast),
-        background-color var(--transition-fast),
-        border-color var(--transition-fast),
-        color var(--transition-fast),
-        box-shadow var(--transition-slow);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #f7b085, #f08f6d);
-      color: #23160f;
-      box-shadow: 0 18px 34px rgba(240, 143, 109, 0.24);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 22px 40px rgba(240, 143, 109, 0.32);
-    }
-
-    .btn-secondary {
-      border-color: rgba(255, 241, 225, 0.18);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      border-color: rgba(255, 208, 173, 0.34);
-      background: rgba(255, 208, 173, 0.08);
-    }
-
-    .footer-panel {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0.01)),
-        var(--panel);
-      backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-    }
-
-    .footer-panel::before {
+    .featured-card::before {
       content: "";
       position: absolute;
       inset: 0;
-      border-radius: inherit;
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      pointer-events: none;
-    }
-
-    .panel-label {
-      margin: 0;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-strong);
-    }
-
-    .footer-panel {
-      padding: clamp(22px, 4vw, 30px);
-    }
-
-    .footer-panel {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      z-index: -1;
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.012)),
-        rgba(12, 11, 11, 0.92);
+        linear-gradient(90deg, rgba(8, 7, 6, 0.94) 0%, rgba(8, 7, 6, 0.72) 43%, rgba(8, 7, 6, 0.12) 75%),
+        linear-gradient(0deg, rgba(8, 7, 6, 0.74) 0%, transparent 45%);
     }
 
-    .footer-copy {
-      display: grid;
-      gap: 6px;
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      width: min(100%, 650px);
+      padding: clamp(28px, 6vw, 72px);
     }
 
-    .footer-copy span,
-    .copyright {
-      color: var(--muted);
+    .featured-content h3 {
+      margin: 0;
+      max-width: 11ch;
+      font-family: var(--display);
+      font-size: clamp(3.3rem, 7.4vw, 7.6rem);
+      font-weight: 400;
+      letter-spacing: -0.05em;
+      line-height: 0.83;
     }
 
-    .contact-link {
+    .featured-content > p {
+      max-width: 39rem;
+      margin: 24px 0 0;
+      color: var(--paper-soft);
+      font-size: clamp(0.97rem, 1.6vw, 1.1rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      padding: 0 18px;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 19px;
+      border: 1px solid transparent;
       border-radius: 999px;
-      border: 1px solid rgba(255, 241, 225, 0.16);
-      font-size: 11px;
+      font-size: 0.68rem;
       font-weight: 800;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.12em;
+      text-decoration: none;
       text-transform: uppercase;
-      transition:
-        border-color var(--transition-fast),
-        transform var(--transition-fast),
-        background-color var(--transition-fast);
+      transition: transform var(--ease), background-color var(--ease), border-color var(--ease);
     }
 
-    .contact-link:hover {
+    .button:hover {
       transform: translateY(-2px);
-      border-color: rgba(255, 208, 173, 0.34);
-      background: rgba(255, 208, 173, 0.08);
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: rise 740ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    .button-primary {
+      background: var(--paper);
+      color: var(--ink);
     }
 
-    .delay-1 {
-      animation-delay: 60ms;
+    .button-primary:hover {
+      background: #fff9ef;
     }
 
-    .delay-2 {
-      animation-delay: 140ms;
+    .button-ghost {
+      border-color: var(--line-strong);
+      background: rgba(8, 7, 6, 0.35);
+      color: var(--paper);
+      backdrop-filter: blur(12px);
     }
 
-    .delay-3 {
-      animation-delay: 220ms;
+    .button-ghost:hover {
+      border-color: rgba(255, 175, 133, 0.5);
+      background: rgba(237, 118, 88, 0.12);
     }
 
-    .delay-4 {
-      animation-delay: 300ms;
+    .coming-card {
+      min-height: 460px;
+      background: #12100f;
     }
 
-    a:focus-visible,
-    .btn:focus-visible,
-    .contact-link:focus-visible {
-      outline: 2px solid var(--accent-strong);
-      outline-offset: 4px;
+    .coming-card::before {
+      display: none;
     }
 
-    @keyframes rise {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+    .coming-card .featured-content h3 {
+      max-width: 8ch;
+      font-size: clamp(3.25rem, 6vw, 6.3rem);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+      transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+    }
+
+    .project-card:hover {
+      border-color: var(--line-strong);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+      transform: translateY(-5px);
+    }
+
+    .project-image-wrap {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #171412;
+    }
+
+    .project-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(to top, rgba(11, 10, 9, 0.3), transparent 40%);
+      pointer-events: none;
+    }
+
+    .project-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.035);
+    }
+
+    .project-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: clamp(22px, 4vw, 36px);
+    }
+
+    .project-meta {
+      margin: 0 0 14px;
+      color: var(--ember-light);
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .project-body h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(2.3rem, 4vw, 4.4rem);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+    }
+
+    .project-body p {
+      margin: 18px 0 0;
+      color: var(--paper-soft);
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      padding-top: 26px;
+      color: var(--paper);
+      font-size: 0.69rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .project-link::after {
+      content: "↗";
+      color: var(--ember-light);
+      font-size: 1rem;
+      transition: transform var(--ease);
+    }
+
+    .project-link:hover::after {
+      transform: translate(3px, -3px);
+    }
+
+    .site-footer {
+      padding-block: 30px 38px;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+    }
+
+    .footer-links a,
+    .copyright {
+      color: var(--paper-dim);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .footer-links a {
+      transition: color var(--ease);
+    }
+
+    .footer-links a:hover {
+      color: var(--paper);
+    }
+
+    @media (max-width: 860px) {
+      .featured-card {
+        min-height: 610px;
+      }
+
+      .featured-card::before {
+        background:
+          linear-gradient(0deg, rgba(8, 7, 6, 0.97) 0%, rgba(8, 7, 6, 0.72) 56%, rgba(8, 7, 6, 0.15) 100%),
+          linear-gradient(90deg, rgba(8, 7, 6, 0.4), transparent);
+      }
+
+      .featured-content {
+        width: 100%;
       }
     }
 
-    @media (max-width: 980px) {
+    @media (max-width: 680px) {
+      .shell {
+        width: min(calc(100% - 24px), var(--max-width));
+      }
+
       .site-header {
-        border-radius: 28px;
+        padding-block: 15px;
       }
 
-      .hero {
-        min-height: auto;
+      .brand-name {
+        font-size: 0.76rem;
       }
 
-      .hero-title {
-        max-width: 11ch;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .page-shell {
-        padding: 14px 12px 28px;
+      .brand-mark {
+        width: 40px;
+        height: 40px;
       }
 
-      .site-header {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 16px;
+      .brand-mark img {
+        width: 32px;
+        height: 32px;
+      }
+
+      .section {
+        padding-block: 78px;
+      }
+
+      .section-first {
+        padding-top: 42px;
+      }
+
+      .featured-card,
+      .coming-card {
+        min-height: 610px;
         border-radius: 24px;
       }
 
-      .site-nav {
-        gap: 14px;
+      .featured-media {
+        object-position: 60% center;
       }
 
-      .hero,
-      .footer-panel {
-        border-radius: 24px;
+      .featured-content {
+        padding: 26px;
       }
 
-      .hero {
-        padding: 22px;
-        background-position: 62% 64%;
+      .featured-content h3,
+      .coming-card .featured-content h3 {
+        font-size: clamp(3.35rem, 16vw, 5.2rem);
       }
 
-      .hero-title {
-        max-width: none;
-        font-size: clamp(2.9rem, 13vw, 4.8rem);
+      .project-grid {
+        grid-template-columns: 1fr;
       }
 
-      .footer-panel {
-        flex-direction: column;
+      .project-card {
+        border-radius: 20px;
+      }
+
+      .footer-row {
         align-items: flex-start;
+        flex-direction: column;
       }
     }
 
@@ -519,82 +581,163 @@
       *,
       *::before,
       *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-
-      .reveal {
-        opacity: 1;
-        transform: none;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page-shell">
-    <header class="site-header reveal delay-1">
-      <a class="brand" href="#top" aria-label="Quiet Den Games home">
-        <div class="brand-mark">
-          <img src="assets/placeholder-logo.png" alt="Quiet Den Games logo">
-        </div>
-        <div class="brand-copy">
-          <span class="brand-name">Quiet Den Games</span>
-        </div>
-      </a>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="Quiet Den Games home">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/brand-mark.png" alt="">
+      </span>
+      <span class="brand-name">Quiet Den Games</span>
+    </a>
 
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#games">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#featured">Featured</a>
+      <a href="#games">Games</a>
+    </nav>
+  </header>
 
-    <main id="top">
-      <section class="hero reveal delay-2" id="games" aria-labelledby="featured-title">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="panel-label">Featured game</span>
-            <h2 class="hero-title" id="featured-title">The Interval Bureau: Extension 0</h2>
+  <main id="top" class="shell">
+    <section class="section section-first" id="featured" aria-labelledby="featured-title">
+      <div class="section-title">
+        <h1 id="featured-title">Featured</h1>
+      </div>
+
+      <div class="featured-list">
+        <article class="featured-card">
+          <img
+            class="featured-media"
+            src="assets/Extension0/hero.jpg"
+            alt="A red-lit office telephone on a dark desk"
+            width="1800"
+            height="1012"
+            fetchpriority="high"
+          >
+          <div class="featured-content">
+            <h3>The Interval Bureau: Extension 0</h3>
             <p>
-              A short psychological audio horror call where every number routes you
-              deeper into a faceless bureau that measures and files you.
+              A short, audio-first psychological horror game set inside a corporate
+              hotline. Every number routes you deeper into a bureau that measures,
+              tests, and files you.
             </p>
-
-            <div class="hero-actions">
+            <div class="actions">
               <a
-                class="btn btn-primary"
+                class="button button-primary"
                 href="https://store.steampowered.com/app/4192270/The_Interval_Bureau_Extension_0/"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
-                Play on Steam
+                Play on Steam <span aria-hidden="true">↗</span>
               </a>
               <a
-                class="btn btn-secondary"
+                class="button button-ghost"
                 href="https://quietdengames.itch.io/extension0"
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
               >
-                Play on itch.io
+                Play on itch.io <span aria-hidden="true">↗</span>
               </a>
             </div>
           </div>
-        </div>
-      </section>
+        </article>
 
-    </main>
-
-    <footer class="site-footer reveal delay-4" id="contact">
-      <div class="footer-panel">
-        <div class="footer-copy">
-          <span>For press, contact, or general inquiries.</span>
-        </div>
-
-        <span class="contact-link" aria-label="Email address">contact[at]quietdengames.com</span>
-
-        <p class="copyright">&copy; <span id="year"></span> Quiet Den Games</p>
+        <article class="featured-card coming-card">
+          <div class="featured-content">
+            <h3>Unannounced Project</h3>
+            <p>Coming soon.</p>
+          </div>
+        </article>
       </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="section" id="games" aria-labelledby="games-title">
+      <div class="section-title">
+        <h2 id="games-title">More games</h2>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-image-wrap">
+            <img
+              class="project-image"
+              src="assets/HerMajestysDecree/card.jpg"
+              alt="Colorful playing cards beneath the title Her Majesty's Decree"
+              width="1200"
+              height="835"
+              loading="lazy"
+            >
+          </div>
+          <div class="project-body">
+            <p class="project-meta">Card puzzle · Browser and PC</p>
+            <h3>Her Majesty’s Decree</h3>
+            <p>
+              Win the court’s favor without overstepping. A compact game of odds,
+              timing, and knowing exactly when enough is enough.
+            </p>
+            <a
+              class="project-link"
+              href="https://quietdengames.itch.io/her-majestys-decree"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Play on itch.io
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image-wrap">
+            <img
+              class="project-image"
+              src="assets/WhiskersAndWhispers/card.jpg"
+              alt="A worried black cat in a library beneath the title Whiskers and Whispers"
+              width="630"
+              height="500"
+              loading="lazy"
+            >
+          </div>
+          <div class="project-body">
+            <p class="project-meta">GMTK Game Jam 2026 · With Lebowsker</p>
+            <h3>Whiskers &amp; Whispers</h3>
+            <p>
+              Sneak through a very quiet library as a cat with chronic hiccups.
+              Stay out of earshot, watch the countdown, and find the cure.
+            </p>
+            <a
+              class="project-link"
+              href="https://quietdengames.itch.io/whiskersnwhispers"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Play on itch.io
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-row shell">
+      <div class="footer-links">
+        <a href="mailto:contact@quietdengames.com">Contact</a>
+        <a href="https://quietdengames.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
+        <a
+          href="https://store.steampowered.com/app/4192270/The_Interval_Bureau_Extension_0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Steam</a>
+      </div>
+      <p class="copyright">© <span id="year"></span> Quiet Den Games</p>
+    </div>
+  </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
