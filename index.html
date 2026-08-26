@@ -409,6 +409,7 @@
       overflow: hidden;
       border-bottom: 1px solid var(--line);
       background: #1b130f;
+      transition: background-color 150ms ease;
     }
 
     .project-image-wrap::after {
@@ -1059,24 +1060,16 @@
             alt: "The Interval Bureau: Extension 0 title art with a red-lit office telephone"
           },
           {
-            src: "assets/Extension0/Screenshots/scanner_1.jpg",
-            alt: "A red-lit employee help line phone displaying instructions to hold still"
-          },
-          {
-            src: "assets/Extension0/Screenshots/river_4.jpg",
-            alt: "A grainy employee help line phone displaying questions about a dark river"
-          },
-          {
-            src: "assets/Extension0/Screenshots/corporate_5.jpg",
+            src: "assets/Extension0/Screenshots/1.jpg",
             alt: "A close view of the employee help line phone and unsettling corporate response options"
           },
           {
-            src: "assets/Extension0/Screenshots/spire_6.jpg",
-            alt: "A foggy pink-lit phone displaying instructions about a sign and a shadow"
+            src: "assets/Extension0/Screenshots/2.jpg",
+            alt: "A dark red employee help line phone displaying instructions about watching a figure"
           },
           {
-            src: "assets/Extension0/Screenshots/river_7.jpg",
-            alt: "A dark red employee help line phone displaying instructions about watching a figure"
+            src: "assets/Extension0/Screenshots/3.jpg",
+            alt: "A red-lit employee help line phone displaying instructions to hold still"
           }
         ]
       },
@@ -1098,10 +1091,6 @@
           {
             src: "assets/HerMajestysDecree/Screenshots/3.png",
             alt: "An early engagement against the King of Spades"
-          },
-          {
-            src: "assets/HerMajestysDecree/Screenshots/4.png",
-            alt: "The rules screen for Her Majesty's Decree"
           }
         ]
       },
@@ -1110,19 +1099,23 @@
         slides: [
           {
             src: "assets/WhiskersAndWhispers/card.jpg",
-            alt: "A worried black cat in a library beneath the title Whiskers and Whispers"
+            alt: "A worried black cat in a library beneath the title Whiskers and Whispers",
+            background: "#efe1be"
           },
           {
             src: "assets/WhiskersAndWhispers/Screenshots/1.png",
-            alt: "A black cat sneaking through a library while a hiccup countdown runs"
+            alt: "A black cat sneaking through a library while a hiccup countdown runs",
+            background: "#433436"
           },
           {
             src: "assets/WhiskersAndWhispers/Screenshots/2.png",
-            alt: "A black cat holding its breath while avoiding librarians"
+            alt: "A black cat holding its breath while avoiding librarians",
+            background: "#433436"
           },
           {
             src: "assets/WhiskersAndWhispers/Screenshots/3.png",
-            alt: "A determined black cat sneaking behind shelves and out of sight"
+            alt: "A determined black cat sneaking behind shelves and out of sight",
+            background: "#433436"
           }
         ]
       }
@@ -1149,6 +1142,11 @@
           window.setTimeout(() => {
             image.src = slide.src;
             image.alt = slide.alt;
+            if (slide.background) {
+              gallery.style.backgroundColor = slide.background;
+            } else {
+              gallery.style.removeProperty("background-color");
+            }
             currentIndex = normalizedIndex;
             requestAnimationFrame(() => image.classList.remove("is-changing"));
           }, 100);
