@@ -605,40 +605,33 @@
     }
 
     .site-footer {
-      padding-block: 30px 38px;
+      padding-block: 38px 42px;
       border-top: 1px solid var(--line);
     }
 
     .footer-row {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+      justify-content: center;
+      gap: 7px;
+      text-align: center;
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px 24px;
+    .footer-contact {
+      color: var(--paper-soft);
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
     }
 
-    .footer-links a,
-    .footer-contact,
     .copyright {
+      margin: 0;
       color: var(--paper-dim);
-      font-size: 0.65rem;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.09em;
-      text-decoration: none;
       text-transform: uppercase;
-    }
-
-    .footer-links a {
-      transition: color var(--ease);
-    }
-
-    .footer-links a:hover {
-      color: var(--paper);
     }
 
     @media (max-width: 1020px) {
@@ -678,10 +671,6 @@
         min-height: 37px;
         padding-inline: 11px;
         font-size: 0.59rem;
-      }
-
-      .nav-link--section {
-        display: none;
       }
 
       .section {
@@ -743,10 +732,6 @@
         padding: 26px;
       }
 
-      .footer-row {
-        align-items: flex-start;
-        flex-direction: column;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -778,19 +763,18 @@
       </a>
 
       <nav class="site-nav" aria-label="Primary navigation">
-        <a class="nav-link nav-link--section" href="#games">Games</a>
-        <a
-          class="nav-link nav-link--store"
-          href="https://quietdengames.itch.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >itch.io ↗</a>
         <a
           class="nav-link nav-link--store nav-link--primary"
           href="https://store.steampowered.com/curator/46278077"
           target="_blank"
           rel="noopener noreferrer"
         >Steam ↗</a>
+        <a
+          class="nav-link nav-link--store"
+          href="https://quietdengames.itch.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >itch.io ↗</a>
       </nav>
     </div>
   </header>
@@ -937,15 +921,7 @@
 
   <footer class="site-footer">
     <div class="footer-row shell">
-      <div class="footer-links">
-        <span class="footer-contact">contact[at]quietdengames.com</span>
-        <a href="https://quietdengames.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
-        <a
-          href="https://store.steampowered.com/curator/46278077"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Steam</a>
-      </div>
+      <span class="footer-contact">contact[at]quietdengames.com</span>
       <p class="copyright">© <span id="year"></span> Quiet Den Games</p>
     </div>
   </footer>
