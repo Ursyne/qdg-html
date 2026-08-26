@@ -466,7 +466,7 @@
       font-size: 1.65rem;
       line-height: 1;
       cursor: pointer;
-      opacity: 0.78;
+      opacity: 0.52;
       transform: translateY(-50%);
       backdrop-filter: blur(10px);
       transition: opacity var(--ease), background-color var(--ease), border-color var(--ease);
@@ -480,28 +480,11 @@
       right: 14px;
     }
 
-    .gallery-arrow:hover {
+    .gallery-arrow:hover,
+    .gallery-arrow:focus-visible {
       border-color: var(--paper);
       background: rgba(18, 13, 10, 0.96);
       opacity: 1;
-    }
-
-    .gallery-count {
-      position: absolute;
-      bottom: 20px;
-      left: 18px;
-      z-index: 2;
-      min-width: 48px;
-      padding: 7px 10px;
-      border: 1px solid rgba(242, 235, 222, 0.22);
-      border-radius: 999px;
-      background: rgba(18, 13, 10, 0.76);
-      color: var(--paper-soft);
-      font-size: 0.61rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-align: center;
-      backdrop-filter: blur(10px);
     }
 
     .trailer-play {
@@ -751,6 +734,12 @@
       }
     }
 
+    @media (hover: none) {
+      .gallery-arrow {
+        opacity: 0.82;
+      }
+    }
+
     @media (max-width: 510px) {
       .header-inner {
         min-height: 64px;
@@ -798,11 +787,6 @@
 
       .gallery-arrow--next {
         right: 10px;
-      }
-
-      .gallery-count {
-        bottom: 14px;
-        left: 12px;
       }
 
       .trailer-trigger {
@@ -896,7 +880,7 @@
           <div class="project-image-wrap" id="extension0-gallery">
             <img
               class="project-image"
-              id="extension0-gallery-image"
+              data-gallery-image
               src="assets/Extension0/hero.jpg"
               alt="The Interval Bureau: Extension 0 title art with a red-lit office telephone"
               width="1800"
@@ -915,9 +899,6 @@
               data-gallery-next
               aria-label="Next Extension 0 image"
             >›</button>
-            <span class="gallery-count" aria-live="polite">
-              <span data-gallery-current>1</span> / 6
-            </span>
             <button
               class="trailer-trigger"
               type="button"
@@ -954,15 +935,28 @@
         </article>
 
         <article class="project-card">
-          <div class="project-image-wrap">
+          <div class="project-image-wrap" id="majesty-gallery">
             <img
               class="project-image"
+              data-gallery-image
               src="assets/HerMajestysDecree/card.jpg"
               alt="Colorful playing cards beneath the title Her Majesty's Decree"
               width="1200"
               height="835"
               loading="lazy"
             >
+            <button
+              class="gallery-arrow gallery-arrow--previous"
+              type="button"
+              data-gallery-previous
+              aria-label="Previous Her Majesty's Decree image"
+            >‹</button>
+            <button
+              class="gallery-arrow gallery-arrow--next"
+              type="button"
+              data-gallery-next
+              aria-label="Next Her Majesty's Decree image"
+            >›</button>
           </div>
           <div class="project-body">
             <p class="project-meta">Card puzzle · Browser and PC</p>
@@ -981,15 +975,28 @@
         </article>
 
         <article class="project-card">
-          <div class="project-image-wrap project-image-wrap--contain">
+          <div class="project-image-wrap project-image-wrap--contain" id="whiskers-gallery">
             <img
               class="project-image project-image--contain"
+              data-gallery-image
               src="assets/WhiskersAndWhispers/card.jpg"
               alt="A worried black cat in a library beneath the title Whiskers and Whispers"
               width="630"
               height="500"
               loading="lazy"
             >
+            <button
+              class="gallery-arrow gallery-arrow--previous"
+              type="button"
+              data-gallery-previous
+              aria-label="Previous Whiskers and Whispers image"
+            >‹</button>
+            <button
+              class="gallery-arrow gallery-arrow--next"
+              type="button"
+              data-gallery-next
+              aria-label="Next Whiskers and Whispers image"
+            >›</button>
           </div>
           <div class="project-body">
             <p class="project-meta">GMTK Game Jam 2026 · With Lebowsker</p>
@@ -1043,76 +1050,130 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    const extensionGallery = document.getElementById("extension0-gallery");
-    const galleryImage = document.getElementById("extension0-gallery-image");
-    const galleryCurrent = extensionGallery.querySelector("[data-gallery-current]");
-    const galleryPrevious = extensionGallery.querySelector("[data-gallery-previous]");
-    const galleryNext = extensionGallery.querySelector("[data-gallery-next]");
-    const extensionSlides = [
+    const galleryDefinitions = [
       {
-        src: "assets/Extension0/hero.jpg",
-        alt: "The Interval Bureau: Extension 0 title art with a red-lit office telephone"
+        id: "extension0-gallery",
+        slides: [
+          {
+            src: "assets/Extension0/hero.jpg",
+            alt: "The Interval Bureau: Extension 0 title art with a red-lit office telephone"
+          },
+          {
+            src: "assets/Extension0/Screenshots/scanner_1.jpg",
+            alt: "A red-lit employee help line phone displaying instructions to hold still"
+          },
+          {
+            src: "assets/Extension0/Screenshots/river_4.jpg",
+            alt: "A grainy employee help line phone displaying questions about a dark river"
+          },
+          {
+            src: "assets/Extension0/Screenshots/corporate_5.jpg",
+            alt: "A close view of the employee help line phone and unsettling corporate response options"
+          },
+          {
+            src: "assets/Extension0/Screenshots/spire_6.jpg",
+            alt: "A foggy pink-lit phone displaying instructions about a sign and a shadow"
+          },
+          {
+            src: "assets/Extension0/Screenshots/river_7.jpg",
+            alt: "A dark red employee help line phone displaying instructions about watching a figure"
+          }
+        ]
       },
       {
-        src: "assets/Extension0/Screenshots/scanner_1.jpg",
-        alt: "A red-lit employee help line phone displaying instructions to hold still"
+        id: "majesty-gallery",
+        slides: [
+          {
+            src: "assets/HerMajestysDecree/card.jpg",
+            alt: "Colorful playing cards beneath the title Her Majesty's Decree"
+          },
+          {
+            src: "assets/HerMajestysDecree/Screenshots/1.png",
+            alt: "A card engagement against the King of Hearts in Her Majesty's Decree"
+          },
+          {
+            src: "assets/HerMajestysDecree/Screenshots/2.png",
+            alt: "A card engagement with randomized Queen of Hearts requirements"
+          },
+          {
+            src: "assets/HerMajestysDecree/Screenshots/3.png",
+            alt: "An early engagement against the King of Spades"
+          },
+          {
+            src: "assets/HerMajestysDecree/Screenshots/4.png",
+            alt: "The rules screen for Her Majesty's Decree"
+          }
+        ]
       },
       {
-        src: "assets/Extension0/Screenshots/river_4.jpg",
-        alt: "A grainy employee help line phone displaying questions about a dark river"
-      },
-      {
-        src: "assets/Extension0/Screenshots/corporate_5.jpg",
-        alt: "A close view of the employee help line phone and unsettling corporate response options"
-      },
-      {
-        src: "assets/Extension0/Screenshots/spire_6.jpg",
-        alt: "A foggy pink-lit phone displaying instructions about a sign and a shadow"
-      },
-      {
-        src: "assets/Extension0/Screenshots/river_7.jpg",
-        alt: "A dark red employee help line phone displaying instructions about watching a figure"
+        id: "whiskers-gallery",
+        slides: [
+          {
+            src: "assets/WhiskersAndWhispers/card.jpg",
+            alt: "A worried black cat in a library beneath the title Whiskers and Whispers"
+          },
+          {
+            src: "assets/WhiskersAndWhispers/Screenshots/1.png",
+            alt: "A black cat sneaking through a library while a hiccup countdown runs"
+          },
+          {
+            src: "assets/WhiskersAndWhispers/Screenshots/2.png",
+            alt: "A black cat holding its breath while avoiding librarians"
+          },
+          {
+            src: "assets/WhiskersAndWhispers/Screenshots/3.png",
+            alt: "A determined black cat sneaking behind shelves and out of sight"
+          }
+        ]
       }
     ];
-    let galleryIndex = 0;
-    let galleryRequest = 0;
 
-    function showGalleryImage(nextIndex) {
-      const normalizedIndex = (nextIndex + extensionSlides.length) % extensionSlides.length;
-      const slide = extensionSlides[normalizedIndex];
-      const request = ++galleryRequest;
-      const preloader = new Image();
+    function initializeGallery({ id, slides }) {
+      const gallery = document.getElementById(id);
+      const image = gallery.querySelector("[data-gallery-image]");
+      const previous = gallery.querySelector("[data-gallery-previous]");
+      const next = gallery.querySelector("[data-gallery-next]");
+      let currentIndex = 0;
+      let currentRequest = 0;
 
-      preloader.addEventListener("load", () => {
-        if (request !== galleryRequest) return;
+      function showImage(nextIndex) {
+        const normalizedIndex = (nextIndex + slides.length) % slides.length;
+        const slide = slides[normalizedIndex];
+        const request = ++currentRequest;
+        const preloader = new Image();
 
-        galleryImage.classList.add("is-changing");
-        window.setTimeout(() => {
-          galleryImage.src = slide.src;
-          galleryImage.alt = slide.alt;
-          galleryIndex = normalizedIndex;
-          galleryCurrent.textContent = String(galleryIndex + 1);
-          requestAnimationFrame(() => galleryImage.classList.remove("is-changing"));
-        }, 100);
-      }, { once: true });
+        preloader.addEventListener("load", () => {
+          if (request !== currentRequest) return;
 
-      preloader.src = slide.src;
+          image.classList.add("is-changing");
+          window.setTimeout(() => {
+            image.src = slide.src;
+            image.alt = slide.alt;
+            currentIndex = normalizedIndex;
+            requestAnimationFrame(() => image.classList.remove("is-changing"));
+          }, 100);
+        }, { once: true });
+
+        preloader.src = slide.src;
+      }
+
+      previous.addEventListener("click", () => showImage(currentIndex - 1));
+      next.addEventListener("click", () => showImage(currentIndex + 1));
+
+      gallery.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          showImage(currentIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          showImage(currentIndex + 1);
+        }
+      });
     }
 
-    galleryPrevious.addEventListener("click", () => showGalleryImage(galleryIndex - 1));
-    galleryNext.addEventListener("click", () => showGalleryImage(galleryIndex + 1));
-
-    extensionGallery.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        showGalleryImage(galleryIndex - 1);
-      }
-
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        showGalleryImage(galleryIndex + 1);
-      }
-    });
+    galleryDefinitions.forEach(initializeGallery);
 
     const trailerModal = document.getElementById("extension0-trailer");
     const trailerFrame = trailerModal.querySelector(".trailer-frame");
