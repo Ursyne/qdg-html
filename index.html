@@ -697,20 +697,39 @@
     }
 
     @media (max-width: 510px) {
+      .header-inner {
+        min-height: 64px;
+        gap: 8px;
+      }
+
+      .brand {
+        gap: 7px;
+      }
+
+      .brand-mark {
+        width: 35px;
+        height: 35px;
+      }
+
       .brand-name {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
+        font-size: 0.96rem;
+        letter-spacing: 0.055em;
         white-space: nowrap;
-        border: 0;
       }
 
       .site-nav {
-        gap: 5px;
+        gap: 4px;
+      }
+
+      .nav-link {
+        min-height: 33px;
+        padding-inline: 7px;
+        font-size: 0.52rem;
+        letter-spacing: 0.07em;
+      }
+
+      .external-arrow {
+        display: none;
       }
 
       .actions {
@@ -768,13 +787,13 @@
           href="https://store.steampowered.com/curator/46278077"
           target="_blank"
           rel="noopener noreferrer"
-        >Steam ↗</a>
+        >Steam <span class="external-arrow" aria-hidden="true">↗</span></a>
         <a
           class="nav-link nav-link--store"
           href="https://quietdengames.itch.io/"
           target="_blank"
           rel="noopener noreferrer"
-        >itch.io ↗</a>
+        >itch.io <span class="external-arrow" aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
