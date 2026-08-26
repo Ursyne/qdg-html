@@ -613,31 +613,6 @@
       padding-top: 24px;
     }
 
-    .project-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-top: auto;
-      padding-top: 26px;
-      color: var(--paper);
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .project-link::after {
-      content: "↗";
-      color: var(--ember-light);
-      font-size: 0.95rem;
-      transition: transform var(--ease);
-    }
-
-    .project-link:hover::after {
-      transform: translate(3px, -3px);
-    }
-
     .site-footer {
       padding-block: 38px 42px;
       border-top: 1px solid var(--line);
@@ -966,12 +941,14 @@
               Win the court’s favor without overstepping. A compact game of odds,
               timing, and knowing exactly when enough is enough.
             </p>
-            <a
-              class="project-link"
-              href="https://quietdengames.itch.io/her-majestys-decree"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Play on itch.io</a>
+            <div class="actions">
+              <a
+                class="button button-ghost"
+                href="https://quietdengames.itch.io/her-majestys-decree"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Play on itch.io <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </article>
 
@@ -1000,18 +977,20 @@
             >›</button>
           </div>
           <div class="project-body">
-            <p class="project-meta">GMTK Game Jam 2026 · With Lebowsker</p>
+            <p class="project-meta">Stealth puzzle · GMTK Game Jam 2026</p>
             <h3>Whiskers &amp; Whispers</h3>
             <p>
               Sneak through a very quiet library as a cat with chronic hiccups.
               Stay out of earshot, watch the countdown, and find the cure.
             </p>
-            <a
-              class="project-link"
-              href="https://quietdengames.itch.io/whiskersnwhispers"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Play on itch.io</a>
+            <div class="actions">
+              <a
+                class="button button-ghost"
+                href="https://quietdengames.itch.io/whiskersnwhispers"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Play on itch.io <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </article>
 
