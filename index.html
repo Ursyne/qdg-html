@@ -101,7 +101,8 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    a:focus-visible {
+    a:focus-visible,
+    button:focus-visible {
       outline: 2px solid var(--ember-light);
       outline-offset: 5px;
     }
@@ -283,18 +284,18 @@
     }
 
     .section-first {
-      padding-top: clamp(58px, 7vw, 88px);
+      padding-top: clamp(36px, 4vw, 58px);
       border-top: 0;
     }
 
     .section-heading {
-      margin-bottom: clamp(42px, 6vw, 68px);
+      margin-bottom: clamp(26px, 3.5vw, 42px);
     }
 
     .section-heading h2 {
       margin: 0;
       font-family: var(--display);
-      font-size: clamp(2.75rem, 6vw, 5.5rem);
+      font-size: clamp(2.25rem, 4.4vw, 4.1rem);
       font-weight: 600;
       letter-spacing: -0.065em;
       line-height: 0.95;
@@ -366,7 +367,9 @@
     }
 
     .featured-body h3 {
-      font-size: clamp(2.4rem, 4vw, 4.1rem);
+      max-width: 100%;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      overflow-wrap: break-word;
     }
 
     .featured-body > p:not(.project-meta),
@@ -422,6 +425,111 @@
       inset: 0;
       background: linear-gradient(to top, rgba(10, 9, 8, 0.28), transparent 42%);
       pointer-events: none;
+    }
+
+    .trailer-trigger {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 9px;
+      padding: 0 15px;
+      border: 1px solid rgba(242, 235, 222, 0.42);
+      border-radius: 999px;
+      background: rgba(10, 9, 8, 0.82);
+      color: var(--paper);
+      font: inherit;
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      cursor: pointer;
+      backdrop-filter: blur(12px);
+      transition: transform var(--ease), background-color var(--ease), border-color var(--ease);
+    }
+
+    .trailer-trigger:hover {
+      border-color: var(--paper);
+      background: rgba(10, 9, 8, 0.96);
+      transform: translateY(-2px);
+    }
+
+    .trailer-play {
+      color: var(--ember-light);
+      font-size: 0.8rem;
+      line-height: 1;
+    }
+
+    .trailer-modal {
+      width: min(calc(100% - 32px), 980px);
+      max-width: none;
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid var(--line-strong);
+      border-radius: 20px;
+      background: var(--ink-raised);
+      color: var(--paper);
+      box-shadow: 0 35px 120px rgba(0, 0, 0, 0.7);
+    }
+
+    .trailer-modal::backdrop {
+      background: rgba(5, 4, 3, 0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .trailer-modal-header {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 18px 0 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .trailer-modal-title {
+      margin: 0;
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .trailer-close {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      place-items: center;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: transparent;
+      color: var(--paper-soft);
+      font: inherit;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: color var(--ease), border-color var(--ease), background-color var(--ease);
+    }
+
+    .trailer-close:hover {
+      border-color: var(--line-strong);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--paper);
+    }
+
+    .trailer-frame-wrap {
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+
+    .trailer-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     .project-image {
@@ -582,10 +690,6 @@
         grid-template-columns: 1fr;
       }
 
-      .section-heading {
-        gap: 24px;
-      }
-
       .featured-image-wrap {
         min-height: auto;
         aspect-ratio: 16 / 10;
@@ -714,6 +818,15 @@
               height="1012"
               fetchpriority="high"
             >
+            <button
+              class="trailer-trigger"
+              type="button"
+              data-trailer-open="extension0-trailer"
+              aria-haspopup="dialog"
+            >
+              <span class="trailer-play" aria-hidden="true">▶</span>
+              Watch trailer
+            </button>
           </div>
           <div class="project-body">
             <h3>The Interval Bureau: Extension 0</h3>
@@ -797,6 +910,28 @@
     </section>
   </main>
 
+  <dialog
+    class="trailer-modal"
+    id="extension0-trailer"
+    aria-labelledby="extension0-trailer-title"
+  >
+    <div class="trailer-modal-header">
+      <h2 class="trailer-modal-title" id="extension0-trailer-title">
+        The Interval Bureau: Extension 0 — Trailer
+      </h2>
+      <button class="trailer-close" type="button" aria-label="Close trailer">×</button>
+    </div>
+    <div class="trailer-frame-wrap">
+      <iframe
+        class="trailer-frame"
+        title="The Interval Bureau: Extension 0 trailer"
+        data-src="https://www.youtube-nocookie.com/embed/X0MThC0nRj4?autoplay=1&amp;rel=0"
+        allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </dialog>
+
   <footer class="site-footer">
     <div class="footer-row shell">
       <div class="footer-links">
@@ -814,6 +949,29 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const trailerModal = document.getElementById("extension0-trailer");
+    const trailerFrame = trailerModal.querySelector(".trailer-frame");
+    const trailerOpen = document.querySelector('[data-trailer-open="extension0-trailer"]');
+    const trailerClose = trailerModal.querySelector(".trailer-close");
+
+    trailerOpen.addEventListener("click", () => {
+      trailerFrame.src = trailerFrame.dataset.src;
+      trailerModal.showModal();
+    });
+
+    trailerClose.addEventListener("click", () => trailerModal.close());
+
+    trailerModal.addEventListener("click", (event) => {
+      if (event.target === trailerModal) {
+        trailerModal.close();
+      }
+    });
+
+    trailerModal.addEventListener("close", () => {
+      trailerFrame.removeAttribute("src");
+      trailerOpen.focus();
+    });
   </script>
 </body>
 </html>
