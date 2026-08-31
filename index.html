@@ -286,7 +286,7 @@
 
     .featured-project {
       display: grid;
-      grid-template-columns: minmax(0, 1.48fr) minmax(330px, 0.72fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius-lg);
@@ -296,17 +296,15 @@
 
     .featured-image-wrap {
       position: relative;
+      align-self: center;
       min-width: 0;
-      min-height: 540px;
       overflow: hidden;
       background: #070809;
     }
 
     .featured-image {
-      position: absolute;
-      inset: 0;
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: contain;
       transition: opacity 150ms ease;
     }
@@ -317,9 +315,15 @@
 
     .featured-body {
       display: flex;
+      min-width: 0;
       flex-direction: column;
       align-items: flex-start;
-      padding: clamp(32px, 5vw, 58px);
+      justify-content: center;
+      padding: clamp(20px, 2.4vw, 30px);
+    }
+
+    .featured-body .project-meta {
+      margin-bottom: 12px;
     }
 
     .project-meta {
@@ -355,7 +359,7 @@
     }
 
     .featured-body > p:not(.project-meta) {
-      margin: 24px 0 0;
+      margin: 16px 0 0;
     }
 
     .featured-body .actions {
@@ -636,11 +640,7 @@
 
     @media (max-width: 1020px) {
       .featured-project {
-        grid-template-columns: 1.25fr 0.75fr;
-      }
-
-      .featured-image-wrap {
-        min-height: 470px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .project-grid {
@@ -680,11 +680,6 @@
 
       .featured-project {
         grid-template-columns: 1fr;
-      }
-
-      .featured-image-wrap {
-        min-height: auto;
-        aspect-ratio: 16 / 9;
       }
 
       .project-grid {
@@ -861,6 +856,14 @@
             observatories in the Jovian system. Scan for faint signals, analyze what
             you find, and stay in contact with the only other person out there.
           </p>
+          <div class="actions">
+            <a
+              class="button button-primary"
+              href="https://store.steampowered.com/app/5158290/Closer_Than_Stars/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Wishlist on Steam <span aria-hidden="true">↗</span></a>
+          </div>
         </div>
       </article>
 
