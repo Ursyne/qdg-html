@@ -296,32 +296,23 @@
 
     .featured-image-wrap {
       position: relative;
+      min-width: 0;
       min-height: 540px;
       overflow: hidden;
-      background: #18100c;
-    }
-
-    .featured-image-wrap::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent 66%, rgba(18, 13, 10, 0.32));
-      pointer-events: none;
-    }
-
-    .featured-image-wrap--empty::after {
-      display: none;
+      background: #070809;
     }
 
     .featured-image {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+      object-fit: contain;
+      transition: opacity 150ms ease;
     }
 
-    .featured-project:hover .featured-image {
-      transform: scale(1.025);
+    .featured-image.is-changing {
+      opacity: 0;
     }
 
     .featured-body {
@@ -693,11 +684,7 @@
 
       .featured-image-wrap {
         min-height: auto;
-        aspect-ratio: 16 / 10;
-      }
-
-      .featured-image-wrap::after {
-        background: linear-gradient(to top, rgba(18, 13, 10, 0.28), transparent 45%);
+        aspect-ratio: 16 / 9;
       }
 
       .project-grid {
@@ -843,11 +830,37 @@
       </div>
 
       <article class="featured-project">
-        <div class="featured-image-wrap featured-image-wrap--empty" aria-hidden="true"></div>
+        <div class="featured-image-wrap" id="closer-than-stars-gallery">
+          <img
+            class="featured-image"
+            data-gallery-image
+            src="assets/CloserThanStars/main_capsule.png"
+            alt="Closer Than Stars title in red beside Jupiter against the darkness of space"
+            width="1232"
+            height="706"
+            fetchpriority="high"
+          >
+          <button
+            class="gallery-arrow gallery-arrow--previous"
+            type="button"
+            data-gallery-previous
+            aria-label="Previous Closer Than Stars image"
+          >‹</button>
+          <button
+            class="gallery-arrow gallery-arrow--next"
+            type="button"
+            data-gallery-next
+            aria-label="Next Closer Than Stars image"
+          >›</button>
+        </div>
         <div class="featured-body">
-          <p class="project-meta">Featured · Announcement coming soon</p>
-          <h3>Unannounced Project</h3>
-          <p>A new Quiet Den project is almost ready to be revealed. More very soon.</p>
+          <p class="project-meta">Psychological sci-fi horror · In development</p>
+          <h3>Closer Than Stars</h3>
+          <p>
+            A first-person psychological sci-fi horror game about two distant radio
+            observatories in the Jovian system. Scan for faint signals, analyze what
+            you find, and stay in contact with the only other person out there.
+          </p>
         </div>
       </article>
 
@@ -861,7 +874,7 @@
               alt="The Interval Bureau: Extension 0 title art with a red-lit office telephone"
               width="1800"
               height="1012"
-              fetchpriority="high"
+              loading="lazy"
             >
             <button
               class="gallery-arrow gallery-arrow--previous"
@@ -1031,6 +1044,35 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const galleryDefinitions = [
+      {
+        id: "closer-than-stars-gallery",
+        slides: [
+          {
+            src: "assets/CloserThanStars/main_capsule.png",
+            alt: "Closer Than Stars title in red beside Jupiter against the darkness of space"
+          },
+          {
+            src: "assets/CloserThanStars/Screenshots/1.png",
+            alt: "Radio observatory instruments and a circular window overlooking Jupiter"
+          },
+          {
+            src: "assets/CloserThanStars/Screenshots/2.png",
+            alt: "A signal acquisition module displaying a radio frequency and waveform"
+          },
+          {
+            src: "assets/CloserThanStars/Screenshots/3.png",
+            alt: "A dish control monitor tracking a signal against the curve of Jupiter"
+          },
+          {
+            src: "assets/CloserThanStars/Screenshots/4.png",
+            alt: "A laptop analyzing a recorded signal beneath an observatory window facing Jupiter"
+          },
+          {
+            src: "assets/CloserThanStars/Screenshots/5.png",
+            alt: "A dark observatory interior lit by red emergency lighting"
+          }
+        ]
+      },
       {
         id: "extension0-gallery",
         slides: [
