@@ -634,6 +634,39 @@
       letter-spacing: 0.06em;
     }
 
+    .footer-socials {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-block: 8px 5px;
+    }
+
+    .footer-social-link {
+      display: inline-flex;
+      min-height: 36px;
+      align-items: center;
+      justify-content: center;
+      padding-inline: 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--paper-soft);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color var(--ease), background-color var(--ease), border-color var(--ease), transform var(--ease);
+    }
+
+    .footer-social-link:hover {
+      border-color: var(--line-strong);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--paper);
+      transform: translateY(-1px);
+    }
+
     .copyright {
       margin: 0;
       color: var(--paper-dim);
@@ -735,10 +768,6 @@
         letter-spacing: 0.07em;
       }
 
-      .external-arrow {
-        display: none;
-      }
-
       .gallery-arrow {
         width: 36px;
         height: 36px;
@@ -818,19 +847,19 @@
           href="https://app.filen.io/#/f/e0c5af1c-a5d0-4f30-855d-1c82e6b144b9%2346594932567848475943447948793959614a44706f6f3175715f737857783064"
           target="_blank"
           rel="noopener noreferrer"
-        >Press Kit <span class="external-arrow" aria-hidden="true">↗</span></a>
+        >Press Kit</a>
         <a
           class="nav-link nav-link--store"
           href="https://store.steampowered.com/curator/46278077"
           target="_blank"
           rel="noopener noreferrer"
-        >Steam <span class="external-arrow" aria-hidden="true">↗</span></a>
+        >Steam</a>
         <a
           class="nav-link nav-link--store"
           href="https://quietdengames.itch.io/"
           target="_blank"
           rel="noopener noreferrer"
-        >itch.io <span class="external-arrow" aria-hidden="true">↗</span></a>
+        >itch.io</a>
       </nav>
     </div>
   </header>
@@ -1088,6 +1117,32 @@
   <footer class="site-footer">
     <div class="footer-row shell">
       <span class="footer-contact">contact[at]quietdengames.com</span>
+      <nav class="footer-socials" aria-label="Social media">
+        <a
+          class="footer-social-link"
+          href="https://www.reddit.com/user/QuietDenGames/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Reddit</a>
+        <a
+          class="footer-social-link"
+          href="https://www.youtube.com/@QuietDenGames"
+          target="_blank"
+          rel="noopener noreferrer"
+        >YouTube</a>
+        <a
+          class="footer-social-link"
+          href="https://x.com/quietdengames"
+          target="_blank"
+          rel="noopener noreferrer"
+        >X</a>
+        <a
+          class="footer-social-link"
+          href="https://bsky.app/profile/quietdengames.bsky.social"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Bluesky</a>
+      </nav>
       <p class="copyright">© <span id="year"></span> Quiet Den Games</p>
     </div>
   </footer>
