@@ -273,6 +273,7 @@
 
     .section-first {
       padding-top: clamp(36px, 4vw, 58px);
+      padding-bottom: clamp(58px, 6vw, 84px);
       border-top: 0;
     }
 
@@ -632,6 +633,12 @@
       font-size: 0.84rem;
       font-weight: 700;
       letter-spacing: 0.06em;
+      text-decoration: none;
+      transition: color var(--ease);
+    }
+
+    .footer-contact:hover {
+      color: var(--paper);
     }
 
     .footer-socials {
@@ -844,12 +851,6 @@
       <nav class="site-nav" aria-label="Primary navigation">
         <a
           class="nav-link nav-link--store nav-link--primary"
-          href="https://app.filen.io/#/f/e0c5af1c-a5d0-4f30-855d-1c82e6b144b9%2346594932567848475943447948793959614a44706f6f3175715f737857783064"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Press Kit</a>
-        <a
-          class="nav-link nav-link--store"
           href="https://store.steampowered.com/curator/46278077"
           target="_blank"
           rel="noopener noreferrer"
@@ -860,6 +861,12 @@
           target="_blank"
           rel="noopener noreferrer"
         >itch.io</a>
+        <a
+          class="nav-link nav-link--store"
+          href="https://app.filen.io/#/f/e0c5af1c-a5d0-4f30-855d-1c82e6b144b9%2346594932567848475943447948793959614a44706f6f3175715f737857783064"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Press Kit</a>
       </nav>
     </div>
   </header>
@@ -1116,7 +1123,7 @@
 
   <footer class="site-footer">
     <div class="footer-row shell">
-      <span class="footer-contact">contact[at]quietdengames.com</span>
+      <a class="footer-contact" href="mailto:contact@quietdengames.com">contact@quietdengames.com</a>
       <nav class="footer-socials" aria-label="Social media">
         <a
           class="footer-social-link"
